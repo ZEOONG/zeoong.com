@@ -34,7 +34,7 @@ $primary-text-color : #ffffff;
     align-items: center;
 
     margin-top: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
     .profile {
         display: flex;
@@ -57,4 +57,9 @@ $primary-text-color : #ffffff;
             color: $primary-text-color;
         }
     }
+}
+
+.CardLayout {
+    display: flex;
+    flex-wrap: wrap;
 }

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from "@/styles/home.module.scss"
+import Card from "@/components/card"
 
 export default function Home() {
     return (
@@ -34,6 +35,9 @@ export default function Home() {
                         priority
                     />
                     </div>
+                </div>
+                <div className={styles.CardLayout}>
+                    <Card />
                 </div>
             </div>
         </div>
