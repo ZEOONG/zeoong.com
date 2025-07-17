@@ -1,0 +1,50 @@
+$primary-color : #03FF99;
+$div-background-color : rgba(0, 0, 0, 0.4);
+$primary-text-color : #ffffff;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    background-color: $primary-color;
+
+    .imageContainer{
+        padding-top: 5px;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+
+.headerlayout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    .profile {
+        display: flex;
+        background-color: $div-background-color;
+
+        padding: 10px 10px 10px 10px;
+
+        border-radius: 30px;
+
+        h1 {
+            color: $primary-text-color;
+        }
+    }
+}
