@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from "@/styles/home.module.scss"
+import Card from "@/components/card"
 
 export default function Home() {
     return (
@@ -19,13 +20,26 @@ export default function Home() {
                     />
                 </div>
             </div>
-            <header className={styles.header}>
+            <div className={styles.mainlayout}>
                 <div className={styles.headerlayout}>
                     <div className={styles.profile}>
-                        <h1>ZEOONG</h1>
+                    <Image
+                        src="/TitleImage.png"
+                        alt=""
+                        width={300}
+                        height={120}
+                        style={{
+                            width: '300px',
+                            height: 'auto',
+                        }}
+                        priority
+                    />
                     </div>
                 </div>
-            </header>
+                <div className={styles.CardLayout}>
+                    <Card />
+                </div>
+            </div>
         </div>
     )
 }

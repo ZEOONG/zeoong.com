@@ -1,0 +1,63 @@
+$primary-color : #03FF99;
+$div-background-color : rgba(0, 0, 0, 0.4);
+$primary-text-color : #ffffff;
+
+.CardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+
+    color: $primary-text-color;
+
+    background-color: $div-background-color;
+    border-bottom: 3px solid $primary-color;
+
+    border-radius: 10px;
+
+    .CardContent {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+
+        h1 {
+            margin: 5px 0 5px 0;
+        }
+
+        p {
+            margin: 5px 0 5px 0;
+        }
+
+        .InCardLayout {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            .WritingLayout {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                min-width: 0;
+                .ContentInfo {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                }
+            }
+
+            .DownLoadLayout {
+                width: 80px;
+                min-height: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+            }
+        }
+    }
+}
