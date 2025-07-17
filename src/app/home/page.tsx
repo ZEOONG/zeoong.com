@@ -19,13 +19,23 @@ export default function Home() {
                     />
                 </div>
             </div>
-            <header className={styles.header}>
+            <div className={styles.mainlayout}>
                 <div className={styles.headerlayout}>
                     <div className={styles.profile}>
-                        <h1>ZEOONG</h1>
+                    <Image
+                        src="/TitleImage.png"
+                        alt=""
+                        width={300}
+                        height={120}
+                        style={{
+                            width: '300px',
+                            height: 'auto',
+                        }}
+                        priority
+                    />
                     </div>
                 </div>
-            </header>
+            </div>
         </div>
     )
 }
