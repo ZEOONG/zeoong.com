@@ -1,7 +1,7 @@
-"use client";
-
-import Home from "@/components/Home";
-
-export default function HomePage() {
-  return <Home />;
+export default function Home() {
+    return (
+        <div>
+            <h1>Hello, ZEOONG!</h1>
+        </div>
+    )
 }
