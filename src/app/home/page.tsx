@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from "@/styles/home.module.scss"
 
+
 import Card from "@/components/card"
 import Footer from "@/components/footer"
 
