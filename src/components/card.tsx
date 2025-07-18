@@ -15,7 +15,7 @@ export default function Card() {
                         </div>
                     </div>
                     <div className="DownLoadLayout">
-                    <h1>0</h1>
+                        <h1>0</h1>
                     </div>
                 </div>
             </div>
