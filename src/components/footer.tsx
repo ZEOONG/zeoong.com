@@ -29,7 +29,7 @@ export default function Footer() {
                     </p>
                 </div>
                 <p className={styles.infop2}>
-                    &copy; 2024 ZEONG. All rights reserved.
+                    &copy; 2025 ZEONG. All rights reserved.
                 </p>
             </div>
         </footer>
