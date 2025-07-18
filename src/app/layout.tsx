@@ -5,6 +5,9 @@ import "./globals.scss";
 export const metadata: Metadata = {
   title: "ZEOONG's",
   description: "Hello,^^",
+  icons: {
+    icon: "/zeongFace.svg"
+  }
 };
 
 export default function RootLayout({

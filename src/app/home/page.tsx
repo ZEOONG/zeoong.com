@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styles from "@/styles/home.module.scss"
+
 import Card from "@/components/card"
+import Footer from "@/components/footer"
 
 export default function Home() {
     return (
@@ -38,8 +40,12 @@ export default function Home() {
                 </div>
                 <div className={styles.CardLayout}>
                     <Card />
+                    <Card />
+                    <Card />
+                    <Card />
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

@@ -2,12 +2,20 @@ $primary-color : #03FF99;
 $div-background-color : rgba(0, 0, 0, 0.5);
 $primary-text-color : #ffffff;
 
+.TitleImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
 .CardContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 500px;
     width: 100%;
+    overflow: hidden;
 
     color: $primary-text-color;
 
@@ -19,22 +27,39 @@ $primary-text-color : #ffffff;
     .CardContent {
         display: flex;
         flex-direction: row;
-        padding: 10px;
+        width: 100%;
+
         h1 {
-            margin: 5px 0 5px 0;
+            margin: 5px 10px 5px 10px;
         }
         p {
-            margin: 5px 0 5px 0;
+            margin: 5px 10px 5px 10px;
         }
 
         .InCardLayout {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
             .WritingLayout {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+
                 .ContentInfo {
                     display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
                 }
             }
             .DownLoadLayout {
+                width: 80px;
+                min-height: 80px;
                 display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }
