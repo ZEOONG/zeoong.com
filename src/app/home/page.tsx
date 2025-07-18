@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styles from "@/styles/home.module.scss"
-import Link from 'next/link';
 
 import Card from "@/components/card"
 import Footer from "@/components/footer"

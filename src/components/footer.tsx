@@ -15,9 +15,9 @@ export default function Footer() {
                     <Link href="/contact">소개</Link>
                 </div>
                 <Image
-                    src="/calibes.png"
-                    alt="로고 이미지"
-                    width={160}
+                    src="/zeongFace.svg"
+                    alt=""
+                    width={40}
                     height={40}
                     className={styles.Lowlogo}
                 />

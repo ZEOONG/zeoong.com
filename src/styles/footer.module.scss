@@ -1,16 +1,13 @@
 $primary-color : #03FF99;
 $tertiary-color : #222222;
 
-$div-background-color : rgba(0, 0, 0, 0.5);
-$primary-text-color : #ffffff;
-
 .footer {
     background-color: $tertiary-color;
     color: #909090;
     padding: 20px 0;
     text-align: center;
     width: 100%;
-    margin-top: 120px;
+    margin-top: 80px;
 
     &Container {
         max-width: 1030px;
@@ -24,7 +21,7 @@ $primary-text-color : #ffffff;
     &Links {
         display: flex;
         gap: 50px;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
 
         a {
             font-size: 14px;
