@@ -1,11 +1,27 @@
+'use client'
+
 import styles from "@/styles/card.module.scss"
 import Image from 'next/image';
 import Link from "next/link";
+import { MdDownload } from 'react-icons/md';
+
+import { useState } from 'react';
 
 export default function Card() {
-    // const DownLoadClick = () => {
-    //     console.log('다운로드됨');
-    // };
+    const DownLoadClick = () => {
+        console.log('다운로드됨');
+    };
+
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleDownloadClick = () => {
+        setIsClicked(true);
+        DownLoadClick();
+        
+        setTimeout(() => {
+            setIsClicked(false);
+        }, 600); // 강민재 : 0.6초
+    };
 
     return (
         <div className={styles.CardContainer}>
@@ -49,21 +65,9 @@ export default function Card() {
                         </div>
                     </div>
                     <div className={styles.DownLoadLayout}>
-                        {/* <button onClick={DownLoadClick} className="border-none bg-transparent">
-                            <Image
-                                src="/Eye.png"
-                                alt="down"
-                                width={50}
-                                height={50}
-                                className="hover:opacity-80 transition-opacity"
-                            />
-                        </button> */}
-                        <Image
-                            src="/DownLoadButton.svg"
-                            alt="youtube"
-                            width={50}
-                            height={50}
-                        />
+                        <button onClick={handleDownloadClick} className={`${styles.DownLoadLayoutButton} ${isClicked ? styles.clicked : ''}`}>
+                            <MdDownload className={styles.downloadIcon} />
+                        </button>
                     </div>
                 </div>
             </div>
