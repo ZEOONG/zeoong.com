@@ -78,7 +78,12 @@ export default function Card() {
                     <div className={styles.infoItem}>
                         <span className={styles.label}>마인크래프트 버전</span>
                         <div className={styles.tags}>
-                            <span className={styles.tag}>1.21.8</span>
+                            <select className={styles.tagSelect} defaultValue="1.21.8">
+                            <option value="1.16.5">1.16.5</option>
+                            <option value="1.18.2">1.18.2</option>
+                            <option value="1.20.1">1.20.1</option>
+                            <option value="1.21.8">1.21.8</option>
+                            </select>
                         </div>
                     </div>
                     <div className={styles.infoItem}>
