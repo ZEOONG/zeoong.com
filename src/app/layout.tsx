@@ -3,7 +3,7 @@ import "./globals.scss";
 
 
 export const metadata: Metadata = {
-  title: "ZEOONG's",
+  title: "ZEONG's",
   description: "Hello,^^",
   icons: {
     icon: "/zeongFace.svg"
