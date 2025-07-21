@@ -39,7 +39,7 @@ export default function Card() {
                             <h1>Title</h1>
                             <p>Hello WorldHello WorldHello WorldHello World</p>
                             <div className={styles.ContentInfo}>
-                                <Link href="https://example.com" className={styles.IconButton}>
+                                <Link href="https://youtube.com" className={styles.IconButton}>
                                     <Image
                                         src="/youtube-svgrepo-com.svg"
                                         alt="youtube"
@@ -47,7 +47,7 @@ export default function Card() {
                                         height={24}
                                     />
                                 </Link>
-                                <Link href="https://example.com" className={styles.IconButton}>
+                                <Link href="https://instagram.com" className={styles.IconButton}>
                                     <Image
                                         src="/instagram-svgrepo-com.svg"
                                         alt="youtube"
@@ -73,7 +73,37 @@ export default function Card() {
                     </div>
                 </div>
             </div>
-            <div className={styles.OutInfoContainer}></div>
+            <div className={styles.OutInfoContainer}>
+                <div className={styles.OutInfoContainerTop}>
+                    <div className={styles.infoItem}>
+                        <span className={styles.label}>마인크래프트 버전</span>
+                        <div className={styles.tags}>
+                            <span className={styles.tag}>1.21.8</span>
+                        </div>
+                    </div>
+                    <div className={styles.infoItem}>
+                        <span className={styles.label}>장르</span>
+                        <div className={styles.tags}>
+                            <span className={styles.tag}>어드벤처</span>
+                        </div>
+                    </div>
+                    <div className={styles.infoItem}>
+                        <span className={styles.label}>자료종류</span>
+                        <div className={styles.tags}>
+                            <span className={styles.tag}>모드, 맵, 리소스팩</span>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.OutInfoContainerBottom}>
+                    <div className={styles.infoItem}>
+                        <span className={styles.label}>다운로드수</span>
+                        <span className={styles.value}>123</span>
+                    </div>
+                    <div className={styles.infoItem}>
+                        <span className={styles.date}>2025-07-21</span>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
