@@ -20,221 +20,236 @@ $download-text-color : #d8d8d8;
     width: 100%;
     overflow: hidden;
 
-    background-color: $div-background-color;
-    border-bottom: 3px solid $primary-color;
-
-    border-radius: 10px;
-
-    .CardContent {
+    &InLine {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
-
-        h1 {
-            color: $primary-text-color;
-            margin: 0px 10px;
-        }
-        p {
-            color: $secondary-text-color;
-            margin: 5px 10px;
-        }
-
-        .InCardLayout {
+        overflow: hidden;
+    
+        background-color: $div-background-color;
+        border-bottom: 3px solid $primary-color;
+    
+        border-radius: 10px;
+    
+        .CardContent {
             display: flex;
-            justify-content: space-between;
+            flex-direction: row;
             width: 100%;
-
-            .WritingLayout {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                padding: 10px 0;
-
-                .ContentInfo {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-start;
-                    align-items: center;
-                    padding-left: 10px;
-                    padding-top: 5px;
-                    gap: 10px;
-
-                    .IconButton {
-                        padding: 0;
-                    }
-                }
+    
+            h1 {
+                color: $primary-text-color;
+                margin: 0px 10px;
             }
-            .DownLoadLayout {
-                width: 80px;
+    
+            p {
+                color: $secondary-text-color;
+                margin: 5px 10px;
+            }
+    
+            .InCardLayout {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0 10px;
-
-                &Button {
-                    background-color: transparent;
-                    border: 2px solid rgba($download-text-color, 0.3);
-                    border-radius: 50%;
-                    width: 70px;
-                    height: 70px;
-                    cursor: pointer;
+                justify-content: space-between;
+                width: 100%;
+    
+                .WritingLayout {
+                    flex: 1;
                     display: flex;
                     flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 4px;
-                    transition: all 0.3s ease;
-                    position: relative;
-                    overflow: hidden;
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        width: 0;
-                        height: 0;
-                        background: rgba($download-text-color, 0.1);
-                        border-radius: 50%;
-                        transform: translate(-50%, -50%);
-                        transition: all 0.4s ease;
-                    }
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        width: 6px;
-                        height: 6px;
-                        background: $download-text-color;
-                        border-radius: 50%;
-                        transform: translate(-50%, -50%) scale(0);
-                        opacity: 0;
-                    }
-
-                    &:hover {
-                        border-color: $primary-color;
-                        transform: translateY(-2px);
-                        box-shadow: 0 8px 20px rgba($download-text-color, 0.2);
-
-                        &::before {
-                            width: 100%;
-                            height: 100%;
+                    justify-content: flex-start;
+                    padding: 10px 0;
+    
+                    .ContentInfo {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding-left: 10px;
+                        padding-top: 5px;
+                        gap: 10px;
+    
+                        .IconButton {
+                            padding: 0;
                         }
-
+                    }
+                }
+    
+                .DownLoadLayout {
+                    width: 80px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 10px;
+    
+                    &Button {
+                        background-color: transparent;
+                        border: 2px solid rgba($download-text-color, 0.3);
+                        border-radius: 50%;
+                        width: 70px;
+                        height: 70px;
+                        cursor: pointer;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 4px;
+                        transition: all 0.3s ease;
+                        position: relative;
+                        overflow: hidden;
+    
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 0;
+                            height: 0;
+                            background: rgba($download-text-color, 0.1);
+                            border-radius: 50%;
+                            transform: translate(-50%, -50%);
+                            transition: all 0.4s ease;
+                        }
+    
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 6px;
+                            height: 6px;
+                            background: $download-text-color;
+                            border-radius: 50%;
+                            transform: translate(-50%, -50%) scale(0);
+                            opacity: 0;
+                        }
+    
+                        &:hover {
+                            border-color: $primary-color;
+                            transform: translateY(-2px);
+                            box-shadow: 0 8px 20px rgba($download-text-color, 0.2);
+    
+                            &::before {
+                                width: 100%;
+                                height: 100%;
+                            }
+    
+                            .downloadIcon {
+                                animation: downloadBounce 0.6s ease-in-out infinite;
+                                color: $primary-color;
+                                transform: scale(1.1);
+                            }
+                        }
+    
+                        &.clicked {
+                            animation: singleClick 0.6s ease-out;
+    
+                            &::after {
+                                animation: singleParticleBurst 0.6s ease-out;
+                            }
+    
+                            .downloadIcon {
+                                animation: singleClickPulse 0.6s ease-out;
+                            }
+                        }
+    
                         .downloadIcon {
-                            animation: downloadBounce 0.6s ease-in-out infinite;
-                            color: $primary-color;
+                            width: 34px;
+                            height: 34px;
+                            color: rgba($download-text-color, 0.8);
+                            transition: all 0.3s ease;
+                            z-index: 1;
+                        }
+                    }
+    
+                    @keyframes downloadBounce {
+    
+                        0%,
+                        100% {
+                            transform: scale(1.1) translateY(0);
+                        }
+    
+                        50% {
+                            transform: scale(1.1) translateY(-2px);
+                        }
+                    }
+    
+                    @keyframes singleClick {
+                        0% {
+                            transform: translateY(-2px) scale(1);
+                            box-shadow: 0 8px 20px rgba($primary-color, 0.2);
+                        }
+    
+                        15% {
+                            transform: translateY(0px) scale(0.95);
+                            box-shadow: 0 0 0 0 rgba($primary-color, 0.7);
+                        }
+    
+                        30% {
+                            box-shadow: 0 0 0 20px rgba($primary-color, 0);
+                        }
+    
+                        100% {
+                            transform: translateY(-2px) scale(1);
+                            box-shadow: 0 8px 20px rgba($primary-color, 0.2);
+                        }
+                    }
+    
+                    @keyframes singleParticleBurst {
+                        0% {
+                            transform: translate(-50%, -50%) scale(0);
+                            opacity: 0;
+                        }
+    
+                        15% {
+                            transform: translate(-50%, -50%) scale(1);
+                            opacity: 1;
+                            box-shadow:
+                                0 0 0 0 $primary-color,
+                                15px -15px 0 0 $primary-color,
+                                -15px -15px 0 0 $primary-color,
+                                15px 15px 0 0 $primary-color,
+                                -15px 15px 0 0 $primary-color,
+                                20px 0 0 0 $primary-color,
+                                -20px 0 0 0 $primary-color,
+                                0 20px 0 0 $primary-color,
+                                0 -20px 0 0 $primary-color;
+                        }
+    
+                        100% {
+                            transform: translate(-50%, -50%) scale(1);
+                            opacity: 0;
+                            box-shadow:
+                                0 0 0 0 transparent,
+                                25px -25px 0 -2px transparent,
+                                -25px -25px 0 -2px transparent,
+                                25px 25px 0 -2px transparent,
+                                -25px 25px 0 -2px transparent,
+                                35px 0 0 -2px transparent,
+                                -35px 0 0 -2px transparent,
+                                0 35px 0 -2px transparent,
+                                0 -35px 0 -2px transparent;
+                        }
+                    }
+    
+                    @keyframes singleClickPulse {
+                        0% {
+                            transform: scale(1.1);
+                        }
+    
+                        25% {
+                            transform: scale(1.4);
+                        }
+    
+                        100% {
                             transform: scale(1.1);
                         }
                     }
-
-                    &.clicked {
-                        animation: singleClick 0.6s ease-out;
-
-                        &::after {
-                            animation: singleParticleBurst 0.6s ease-out;
-                        }
-
-                        .downloadIcon {
-                            animation: singleClickPulse 0.6s ease-out;
-                        }
-                    }
-
-                    .downloadIcon {
-                        width: 34px;
-                        height: 34px;
-                        color: rgba($download-text-color, 0.8);
-                        transition: all 0.3s ease;
-                        z-index: 1;
-                    }
                 }
-                @keyframes downloadBounce {
-
-                    0%,
-                    100% {
-                        transform: scale(1.1) translateY(0);
-                    }
-
-                    50% {
-                        transform: scale(1.1) translateY(-2px);
-                    }
-                }
-
-                @keyframes singleClick {
-                    0% {
-                        transform: translateY(-2px) scale(1);
-                        box-shadow: 0 8px 20px rgba($primary-color, 0.2);
-                    }
-
-                    15% {
-                        transform: translateY(0px) scale(0.95);
-                        box-shadow: 0 0 0 0 rgba($primary-color, 0.7);
-                    }
-
-                    30% {
-                        box-shadow: 0 0 0 20px rgba($primary-color, 0);
-                    }
-
-                    100% {
-                        transform: translateY(-2px) scale(1);
-                        box-shadow: 0 8px 20px rgba($primary-color, 0.2);
-                    }
-                }
-
-                @keyframes singleParticleBurst {
-                    0% {
-                        transform: translate(-50%, -50%) scale(0);
-                        opacity: 0;
-                    }
-
-                    15% {
-                        transform: translate(-50%, -50%) scale(1);
-                        opacity: 1;
-                        box-shadow:
-                            0 0 0 0 $primary-color,
-                            15px -15px 0 0 $primary-color,
-                            -15px -15px 0 0 $primary-color,
-                            15px 15px 0 0 $primary-color,
-                            -15px 15px 0 0 $primary-color,
-                            20px 0 0 0 $primary-color,
-                            -20px 0 0 0 $primary-color,
-                            0 20px 0 0 $primary-color,
-                            0 -20px 0 0 $primary-color;
-                    }
-
-                    100% {
-                        transform: translate(-50%, -50%) scale(1);
-                        opacity: 0;
-                        box-shadow:
-                            0 0 0 0 transparent,
-                            25px -25px 0 -2px transparent,
-                            -25px -25px 0 -2px transparent,
-                            25px 25px 0 -2px transparent,
-                            -25px 25px 0 -2px transparent,
-                            35px 0 0 -2px transparent,
-                            -35px 0 0 -2px transparent,
-                            0 35px 0 -2px transparent,
-                            0 -35px 0 -2px transparent;
-                    }
-                }
-
-                @keyframes singleClickPulse {
-                    0% {
-                        transform: scale(1.1);
-                    }
-
-                    25% {
-                        transform: scale(1.4);
-                    }
-
-                    100% {
-                        transform: scale(1.1);
-                    }
-                }           
-            }
+            }   
         }
+    }
+
+    .OutInfoContainer {
+        display: flex;
     }
 }
