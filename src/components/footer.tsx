@@ -14,13 +14,23 @@ export default function Footer() {
                     <Link href="/contact">모든 서비스</Link>
                     <Link href="/contact">소개</Link>
                 </div>
-                <Image
-                    src="/zeongFace.svg"
-                    alt=""
-                    width={40}
-                    height={40}
-                    className={styles.Lowlogo}
-                />
+                <div className={styles.Creator}>
+                    <Image
+                        src="/zeongFace.svg"
+                        alt=""
+                        width={40}
+                        height={40}
+                        className={styles.Lowlogo}
+                    />
+                    <Image
+                        src="/kongduckFace.svg"
+                        alt=""
+                        width={40}
+                        height={40}
+                        className={styles.Lowlogo}
+                    />
+                </div>
+                
                 <div className={styles.bigline} />
                 <div className={styles.footerInfo}>
                     <p>

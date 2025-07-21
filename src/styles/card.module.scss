@@ -1,7 +1,11 @@
 $primary-color : #03FF99;
 $div-background-color : rgba(0, 0, 0, 0.5);
+$OutLineInfo-Background-color : rgba(15, 15, 15, 0.7);
 $primary-text-color : #f5f5f5;
 $secondary-text-color : #dedede;
+$OutInfoContainer-text-color: #ffffff;
+$OutInfoContainer-label-color: #cccccc;
+$OutInfoContainer-tag-bg: rgba(255, 255, 255, 0.1);
 
 $download-text-color : #d8d8d8;
 
@@ -20,221 +24,348 @@ $download-text-color : #d8d8d8;
     width: 100%;
     overflow: hidden;
 
-    background-color: $div-background-color;
-    border-bottom: 3px solid $primary-color;
-
-    border-radius: 10px;
-
-    .CardContent {
+    &InLine {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
+        overflow: hidden;
+    
+        background-color: $div-background-color;
+        border-bottom: 3px solid $primary-color;
+    
+        border-radius: 10px;
 
-        h1 {
-            color: $primary-text-color;
-            margin: 0px 10px;
-        }
-        p {
-            color: $secondary-text-color;
-            margin: 5px 10px;
-        }
-
-        .InCardLayout {
+        margin : 20px 0 10px 0;
+    
+        .CardContent {
             display: flex;
-            justify-content: space-between;
+            flex-direction: row;
             width: 100%;
-
-            .WritingLayout {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                padding: 10px 0;
-
-                .ContentInfo {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-start;
-                    align-items: center;
-                    padding-left: 10px;
-                    padding-top: 5px;
-                    gap: 10px;
-
-                    .IconButton {
-                        padding: 0;
-                    }
-                }
+    
+            h1 {
+                color: $primary-text-color;
+                margin: 0px 10px;
             }
-            .DownLoadLayout {
-                width: 80px;
+    
+            p {
+                color: $secondary-text-color;
+                margin: 5px 10px;
+            }
+    
+            .InCardLayout {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0 10px;
-
-                &Button {
-                    background-color: transparent;
-                    border: 2px solid rgba($download-text-color, 0.3);
-                    border-radius: 50%;
-                    width: 70px;
-                    height: 70px;
-                    cursor: pointer;
+                justify-content: space-between;
+                width: 100%;
+    
+                .WritingLayout {
+                    flex: 1;
                     display: flex;
                     flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 4px;
-                    transition: all 0.3s ease;
-                    position: relative;
-                    overflow: hidden;
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        width: 0;
-                        height: 0;
-                        background: rgba($download-text-color, 0.1);
-                        border-radius: 50%;
-                        transform: translate(-50%, -50%);
-                        transition: all 0.4s ease;
-                    }
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        width: 6px;
-                        height: 6px;
-                        background: $download-text-color;
-                        border-radius: 50%;
-                        transform: translate(-50%, -50%) scale(0);
-                        opacity: 0;
-                    }
-
-                    &:hover {
-                        border-color: $primary-color;
-                        transform: translateY(-2px);
-                        box-shadow: 0 8px 20px rgba($download-text-color, 0.2);
-
-                        &::before {
-                            width: 100%;
-                            height: 100%;
+                    justify-content: flex-start;
+                    padding: 10px 0;
+    
+                    .ContentInfo {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding-left: 10px;
+                        padding-top: 5px;
+                        gap: 10px;
+    
+                        .IconButton {
+                            padding: 0;
                         }
-
+                    }
+                }
+    
+                .DownLoadLayout {
+                    width: 80px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 10px;
+    
+                    &Button {
+                        background-color: transparent;
+                        border: 2px solid rgba($download-text-color, 0.3);
+                        border-radius: 50%;
+                        width: 70px;
+                        height: 70px;
+                        cursor: pointer;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 4px;
+                        transition: all 0.3s ease;
+                        position: relative;
+                        overflow: hidden;
+    
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 0;
+                            height: 0;
+                            background: rgba($download-text-color, 0.1);
+                            border-radius: 50%;
+                            transform: translate(-50%, -50%);
+                            transition: all 0.4s ease;
+                        }
+    
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 6px;
+                            height: 6px;
+                            background: $download-text-color;
+                            border-radius: 50%;
+                            transform: translate(-50%, -50%) scale(0);
+                            opacity: 0;
+                        }
+    
+                        &:hover {
+                            border-color: $primary-color;
+                            transform: translateY(-2px);
+                            box-shadow: 0 8px 20px rgba($download-text-color, 0.2);
+    
+                            &::before {
+                                width: 100%;
+                                height: 100%;
+                            }
+    
+                            .downloadIcon {
+                                animation: downloadBounce 0.6s ease-in-out infinite;
+                                color: $primary-color;
+                                transform: scale(1.1);
+                            }
+                        }
+    
+                        &.clicked {
+                            animation: singleClick 0.6s ease-out;
+    
+                            &::after {
+                                animation: singleParticleBurst 0.6s ease-out;
+                            }
+    
+                            .downloadIcon {
+                                animation: singleClickPulse 0.6s ease-out;
+                            }
+                        }
+    
                         .downloadIcon {
-                            animation: downloadBounce 0.6s ease-in-out infinite;
-                            color: $primary-color;
+                            width: 34px;
+                            height: 34px;
+                            color: rgba($download-text-color, 0.8);
+                            transition: all 0.3s ease;
+                            z-index: 1;
+                        }
+                    }
+    
+                    @keyframes downloadBounce {
+    
+                        0%,
+                        100% {
+                            transform: scale(1.1) translateY(0);
+                        }
+    
+                        50% {
+                            transform: scale(1.1) translateY(-2px);
+                        }
+                    }
+    
+                    @keyframes singleClick {
+                        0% {
+                            transform: translateY(-2px) scale(1);
+                            box-shadow: 0 8px 20px rgba($primary-color, 0.2);
+                        }
+    
+                        15% {
+                            transform: translateY(0px) scale(0.95);
+                            box-shadow: 0 0 0 0 rgba($primary-color, 0.7);
+                        }
+    
+                        30% {
+                            box-shadow: 0 0 0 20px rgba($primary-color, 0);
+                        }
+    
+                        100% {
+                            transform: translateY(-2px) scale(1);
+                            box-shadow: 0 8px 20px rgba($primary-color, 0.2);
+                        }
+                    }
+    
+                    @keyframes singleParticleBurst {
+                        0% {
+                            transform: translate(-50%, -50%) scale(0);
+                            opacity: 0;
+                        }
+    
+                        15% {
+                            transform: translate(-50%, -50%) scale(1);
+                            opacity: 1;
+                            box-shadow:
+                                0 0 0 0 $primary-color,
+                                15px -15px 0 0 $primary-color,
+                                -15px -15px 0 0 $primary-color,
+                                15px 15px 0 0 $primary-color,
+                                -15px 15px 0 0 $primary-color,
+                                20px 0 0 0 $primary-color,
+                                -20px 0 0 0 $primary-color,
+                                0 20px 0 0 $primary-color,
+                                0 -20px 0 0 $primary-color;
+                        }
+    
+                        100% {
+                            transform: translate(-50%, -50%) scale(1);
+                            opacity: 0;
+                            box-shadow:
+                                0 0 0 0 transparent,
+                                25px -25px 0 -2px transparent,
+                                -25px -25px 0 -2px transparent,
+                                25px 25px 0 -2px transparent,
+                                -25px 25px 0 -2px transparent,
+                                35px 0 0 -2px transparent,
+                                -35px 0 0 -2px transparent,
+                                0 35px 0 -2px transparent,
+                                0 -35px 0 -2px transparent;
+                        }
+                    }
+    
+                    @keyframes singleClickPulse {
+                        0% {
+                            transform: scale(1.1);
+                        }
+    
+                        25% {
+                            transform: scale(1.4);
+                        }
+    
+                        100% {
                             transform: scale(1.1);
                         }
                     }
-
-                    &.clicked {
-                        animation: singleClick 0.6s ease-out;
-
-                        &::after {
-                            animation: singleParticleBurst 0.6s ease-out;
-                        }
-
-                        .downloadIcon {
-                            animation: singleClickPulse 0.6s ease-out;
-                        }
-                    }
-
-                    .downloadIcon {
-                        width: 34px;
-                        height: 34px;
-                        color: rgba($download-text-color, 0.8);
-                        transition: all 0.3s ease;
-                        z-index: 1;
-                    }
                 }
-                @keyframes downloadBounce {
+            }   
+        }
+    }
+    .OutInfoContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 50px;
+        background-color: $OutLineInfo-Background-color;
+        border-radius: 8px;
+        border-bottom: 3px solid $OutInfoContainer-tag-bg;
+        padding: 6px 0;
+        overflow: hidden;
 
-                    0%,
-                    100% {
-                        transform: scale(1.1) translateY(0);
-                    }
 
-                    50% {
-                        transform: scale(1.1) translateY(-2px);
-                    }
-                }
+        &Top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &Bottom {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
 
-                @keyframes singleClick {
-                    0% {
-                        transform: translateY(-2px) scale(1);
-                        box-shadow: 0 8px 20px rgba($primary-color, 0.2);
-                    }
+        &Bottom {
+            justify-content: flex-end;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 6px;
+            margin-top: 6px;
+        }
+    }
 
-                    15% {
-                        transform: translateY(0px) scale(0.95);
-                        box-shadow: 0 0 0 0 rgba($primary-color, 0.7);
-                    }
+    .infoItem {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        animation: fadeInUp 0.4s ease forwards;
+        opacity: 0;
+        transform: translateY(10px);
 
-                    30% {
-                        box-shadow: 0 0 0 20px rgba($primary-color, 0);
-                    }
+        margin: 0 10px;
 
-                    100% {
-                        transform: translateY(-2px) scale(1);
-                        box-shadow: 0 8px 20px rgba($primary-color, 0.2);
-                    }
-                }
-
-                @keyframes singleParticleBurst {
-                    0% {
-                        transform: translate(-50%, -50%) scale(0);
-                        opacity: 0;
-                    }
-
-                    15% {
-                        transform: translate(-50%, -50%) scale(1);
-                        opacity: 1;
-                        box-shadow:
-                            0 0 0 0 $primary-color,
-                            15px -15px 0 0 $primary-color,
-                            -15px -15px 0 0 $primary-color,
-                            15px 15px 0 0 $primary-color,
-                            -15px 15px 0 0 $primary-color,
-                            20px 0 0 0 $primary-color,
-                            -20px 0 0 0 $primary-color,
-                            0 20px 0 0 $primary-color,
-                            0 -20px 0 0 $primary-color;
-                    }
-
-                    100% {
-                        transform: translate(-50%, -50%) scale(1);
-                        opacity: 0;
-                        box-shadow:
-                            0 0 0 0 transparent,
-                            25px -25px 0 -2px transparent,
-                            -25px -25px 0 -2px transparent,
-                            25px 25px 0 -2px transparent,
-                            -25px 25px 0 -2px transparent,
-                            35px 0 0 -2px transparent,
-                            -35px 0 0 -2px transparent,
-                            0 35px 0 -2px transparent,
-                            0 -35px 0 -2px transparent;
-                    }
-                }
-
-                @keyframes singleClickPulse {
-                    0% {
-                        transform: scale(1.1);
-                    }
-
-                    25% {
-                        transform: scale(1.4);
-                    }
-
-                    100% {
-                        transform: scale(1.1);
-                    }
-                }           
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+                animation-delay: #{$i * 0.1}s;
             }
+        }
+
+        .label {
+            font-size: 12px;
+            color: $OutInfoContainer-label-color;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .value {
+            font-size: 14px;
+            color: $OutInfoContainer-text-color;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .date {
+            font-size: 13px;
+            color: rgb(161, 161, 161);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 20px;
+        background: linear-gradient(135deg, $OutInfoContainer-tag-bg, lighten($OutInfoContainer-tag-bg, 7%));
+        color: $OutInfoContainer-text-color;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(4px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+
+        &:active {
+            transform: scale(0.96);
+        }
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 }

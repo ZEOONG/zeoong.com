@@ -22,6 +22,14 @@ $tertiary-color : #222222;
         align-items: flex-start;
     }
 
+    .Creator {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+    }
+
     &Links {
         display: flex;
         gap: 50px;
