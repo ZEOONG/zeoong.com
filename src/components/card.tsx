@@ -20,24 +20,30 @@ export default function Card() {
         
         setTimeout(() => {
             setIsClicked(false);
-        }, 600); // 강민재 : 0.6초
+        }, 600);
     };
 
     return (
         <div className={styles.CardContainer}>
             <div className={styles.CardContainerInLine}>
-                <Image
-                    src="/background-img.png"
-                    alt=""
-                    width={1920}
-                    height={1080}
-                    className={styles.TitleImage}
-                />
+                <div className={styles.ImageContainer}>
+                    <Image
+                        src="/background-img.png"
+                        alt=""
+                        width={1920}
+                        height={1080}
+                        className={styles.TitleImage}
+                    />
+                    <div className={styles.ImageOverlay}>
+                        <h2 className={styles.OverlayTitle}>소울라이크 게임팩</h2>
+                        <p className={styles.OverlaySubtitle}>마인크래프트로 구현한 소울라이크</p>
+                    </div>
+                </div>
                 <div className={styles.CardContent}>
                     <div className={styles.InCardLayout}>
                         <div className={styles.WritingLayout}>
-                            <h1>Title</h1>
-                            <p>Hello WorldHello WorldHello WorldHello World</p>
+                            <h1>소울라이크</h1>
+                            <p>소울게임 스타일 전투를 마크로 구현했습니다</p>
                             <div className={styles.ContentInfo}>
                                 <Link href="https://youtube.com" className={styles.IconButton}>
                                     <Image
@@ -50,7 +56,7 @@ export default function Card() {
                                 <Link href="https://instagram.com" className={styles.IconButton}>
                                     <Image
                                         src="/instagram-svgrepo-com.svg"
-                                        alt="youtube"
+                                        alt="instagram"
                                         width={24}
                                         height={24}
                                     />
@@ -58,7 +64,7 @@ export default function Card() {
                                 <Link href="https://example.com" className={styles.IconButton}>
                                     <Image
                                         src="/tiktok-svgrepo-com.svg"
-                                        alt="youtube"
+                                        alt="tiktok"
                                         width={24}
                                         height={24}
                                     />
@@ -79,10 +85,10 @@ export default function Card() {
                         <span className={styles.label}>마인크래프트 버전</span>
                         <div className={styles.tags}>
                             <select className={styles.tagSelect} defaultValue="1.21.8">
-                            <option value="1.16.5">1.16.5</option>
-                            <option value="1.18.2">1.18.2</option>
-                            <option value="1.20.1">1.20.1</option>
-                            <option value="1.21.8">1.21.8</option>
+                                <option value="1.16.5">1.16.5</option>
+                                <option value="1.18.2">1.18.2</option>
+                                <option value="1.20.1">1.20.1</option>
+                                <option value="1.21.8">1.21.8</option>
                             </select>
                         </div>
                     </div>
