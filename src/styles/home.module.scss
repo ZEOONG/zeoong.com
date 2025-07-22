@@ -1,4 +1,5 @@
 $primary-color : #03FF99;
+$hr-color : #444444;
 $div-background-color : rgba(0, 0, 0, 0.5);
 $primary-text-color : #ffffff;
 
@@ -29,13 +30,41 @@ $primary-text-color : #ffffff;
 }
 
 
+.sortSelect {
+    width: 160px;
+}
+
+.sortSelectBtn {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #434343;
+    border-radius: 6px;
+    background-color: #212121;
+    color: #dadada;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+        border-color: #888;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: #555;
+        box-shadow: none;
+    }
+}
+
+
 .headerlayout {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 
     margin-top: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     .profile {
         display: flex;
@@ -43,16 +72,10 @@ $primary-text-color : #ffffff;
         align-items: center;
         background-color: $div-background-color;
 
-        padding: 10px 0 20px 0;
+        padding: 20px 0;
 
         width: 100%;
         height: auto;
-
-        border-radius: 30px;
-
-        border-top: 3px solid $primary-color;
-        border-bottom: 3px solid $primary-color;
-        
 
         h1 {
             color: $primary-text-color;
@@ -117,7 +140,6 @@ $primary-text-color : #ffffff;
         &:disabled {
             background-color: #1a1a1a;
             color: #777;
-            cursor: not-allowed;
             opacity: 0.6;
         }
     }
