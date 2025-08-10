@@ -20,11 +20,11 @@
         "genre": "어드벤처",
         "type": "모드, 맵, 리소스팩",
         "downloads": 123,
-        "date": "2025-07-19"
+        "date": "2025-07-27"
       }
     },
     {
-        "titleImage": "/background-img-1.png",
+        "titleImage": "/1f5180bb8847c643.png",
         "overlay": {
           "title": "크라켄 게임팩",
           "subtitle": "마인크래프트로 구현한 크라켄"
@@ -48,7 +48,7 @@
         }
     },
     {
-        "titleImage": "/background-img-2.png",
+        "titleImage": "/1619f2e33f112260.png",
         "overlay": {
           "title": "제트 게임팩",
           "subtitle": "마인크래프트로 구현한 제트"
