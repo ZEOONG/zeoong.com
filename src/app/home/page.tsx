@@ -10,6 +10,7 @@ import Card from "@/components/card"
 import Footer from "@/components/footer"
 import Pagination from "@/components/Pagination";
 import SortSelect from "@/components/SortSelect";
+import Header from "@/components/header";
 
 export default function Home() {
   const cardsPerPage = 4;
@@ -64,9 +65,7 @@ export default function Home() {
             </div>
         </div>
           <div className={styles.mainlayout}>
-            <div className={styles.headerlayout}>
-                <div className={styles.profile}><h1>Welcome!</h1></div>
-            </div>
+            <Header />
 
             <SortSelect sortOrder={sortOrder} onChange={handleSortChange} />
 
