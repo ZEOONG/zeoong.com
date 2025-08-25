@@ -1,0 +1,75 @@
+[
+    {
+      "titleImage": "https://imagedelivery.net/djfWIfaU9Mg_fliCGQwJbw/3f0eadc3-5870-4678-a4ce-77dc115db000/public",
+      "overlay": {
+        "title": "소울라이크 게임팩",
+        "subtitle": "마인크래프트로 구현한 소울라이크"
+      },
+      "content": {
+        "title": "소울라이크",
+        "description": "소울게임 스타일 전투를 마크로 구현했습니다"
+      },
+      "links": [
+        { "href": "https://youtube.com", "icon": "/youtube-svgrepo-com.svg", "alt": "youtube" },
+        { "href": "https://instagram.com", "icon": "/instagram-svgrepo-com.svg", "alt": "instagram" },
+        { "href": "https://example.com", "icon": "/tiktok-svgrepo-com.svg", "alt": "tiktok" }
+      ],
+      "info": {
+        "versionOptions": ["1.16.5", "1.18.2", "1.20.1", "1.21.8"],
+        "defaultVersion": "1.21.8",
+        "genre": "어드벤처",
+        "type": "모드, 맵, 리소스팩",
+        "downloads": 123,
+        "date": "2025-07-27"
+      }
+    },
+    {
+        "titleImage": "/1f5180bb8847c643.png",
+        "overlay": {
+          "title": "크라켄 게임팩",
+          "subtitle": "마인크래프트로 구현한 크라켄"
+        },
+        "content": {
+          "title": "크라켄",
+          "description": "난파당한 배 위에서 크라켄과 맞서 싸우는 맵입니다"
+        },
+        "links": [
+          { "href": "https://youtube.com", "icon": "/youtube-svgrepo-com.svg", "alt": "youtube" },
+          { "href": "https://instagram.com", "icon": "/instagram-svgrepo-com.svg", "alt": "instagram" },
+          { "href": "https://example.com", "icon": "/tiktok-svgrepo-com.svg", "alt": "tiktok" }
+        ],
+        "info": {
+          "versionOptions": ["1.16.5", "1.18.2", "1.20.1", "1.21.8"],
+          "defaultVersion": "1.21.8",
+          "genre": "어드벤처",
+          "type": "모드, 맵, 리소스팩",
+          "downloads": 50,
+          "date": "2025-07-20"
+        }
+    },
+    {
+        "titleImage": "/1619f2e33f112260.png",
+        "overlay": {
+          "title": "제트 게임팩",
+          "subtitle": "마인크래프트로 구현한 제트"
+        },
+        "content": {
+          "title": "제트",
+          "description": "발로란트의 제트를 마크로 구현했습니다"
+        },
+        "links": [
+          { "href": "https://youtube.com", "icon": "/youtube-svgrepo-com.svg", "alt": "youtube" },
+          { "href": "https://instagram.com", "icon": "/instagram-svgrepo-com.svg", "alt": "instagram" },
+          { "href": "https://example.com", "icon": "/tiktok-svgrepo-com.svg", "alt": "tiktok" }
+        ],
+        "info": {
+          "versionOptions": ["1.16.5", "1.18.2", "1.20.1", "1.21.8"],
+          "defaultVersion": "1.21.8",
+          "genre": "어드벤처",
+          "type": "모드, 맵, 리소스팩",
+          "downloads": 30,
+          "date": "2025-07-21"
+        }
+    }
+]
+  
