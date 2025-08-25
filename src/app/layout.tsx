@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 
+export const runtime = "edge"
+
 
 export const metadata: Metadata = {
   title: "ZEONG's",
