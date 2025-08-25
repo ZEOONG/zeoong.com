@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 
+import { Analytics } from "@vercel/analytics/next"
+
 export const runtime = "edge"
 
 
@@ -21,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <Analytics />
       </body>
     </html>
   );
