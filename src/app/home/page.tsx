@@ -1,5 +1,7 @@
 'use client'
 
+export const runtime = "edge"
+
 import styles from "@/styles/home.module.scss"
 import Image from 'next/image'
 import { useState, useEffect } from "react"
