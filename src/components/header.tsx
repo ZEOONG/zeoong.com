@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className={styles.headerlayout}>
       <div className={styles.profile}>
-        <h1>Welcome!</h1>
+        <h1></h1>
       </div>
     </div>
   );
