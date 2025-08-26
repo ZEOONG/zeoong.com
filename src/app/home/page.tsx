@@ -1,18 +1,16 @@
-'use client'
+"use client";
 
-export const runtime = "edge"
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
-import styles from "@/styles/home.module.scss"
-import Image from 'next/image'
-import { useState, useEffect } from "react"
-
-import cardDataList from "@/data/cardData.json"
-
-import Card from "@/components/card"
-import Footer from "@/components/footer"
+import Card from "@/components/card";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import Pagination from "@/components/Pagination";
 import SortSelect from "@/components/SortSelect";
-import Header from "@/components/header";
+import cardDataList from "@/data/cardData.json";
+
+import styles from "@/styles/home.module.scss";
 
 export default function Home() {
   const cardsPerPage = 4;
@@ -38,7 +36,7 @@ export default function Home() {
   const totalPages = Math.ceil(sortedCards.length / cardsPerPage);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage, sortOrder]);
 
   const handlePageChange = (pageNumber: number) => {
@@ -54,34 +52,34 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-        <div className={styles.top}>
-            <div className={styles.imageContainer}>
-                <Image
-                    src="/Eye.png"
-                    alt=""
-                    width={236}
-                    height={143}
-                    style={{ width: '50px', height: 'auto' }}
-                    priority
-                />
-            </div>
+      <div className={styles.top}>
+        <div className={styles.imageContainer}>
+          <Image
+            src="https://imagedelivery.net/djfWIfaU9Mg_fliCGQwJbw/8aeb9793-6cf5-4c92-ad9a-c965b5f1da00/public"
+            alt=""
+            width={236}
+            height={143}
+            style={{ width: "50px", height: "auto" }}
+            priority
+          />
         </div>
-          <div className={styles.mainlayout}>
-            <Header />
+      </div>
+      <div className={styles.mainlayout}>
+        <Header />
 
-            <SortSelect sortOrder={sortOrder} onChange={handleSortChange} />
+        <SortSelect sortOrder={sortOrder} onChange={handleSortChange} />
 
-            <div className={styles.CardLayout}>
-            {currentCards.map((card, index) => (
-                <Card key={index} data={card} />
-            ))}
-            </div>
-            <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={handlePageChange}
-            />
+        <div className={styles.CardLayout}>
+          {currentCards.map((card, index) => (
+            <Card key={index} data={card} />
+          ))}
         </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
 
       <Footer />
     </div>
