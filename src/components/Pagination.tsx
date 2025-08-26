@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import styles from "@/styles/home.module.scss";
 
@@ -8,7 +8,11 @@ interface PaginationProps {
   onPageChange: (page: number) => void;
 }
 
-export default function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
+export default function Pagination({
+  currentPage,
+  totalPages,
+  onPageChange,
+}: PaginationProps) {
   return (
     <div className={styles.pagination}>
       <button
@@ -24,9 +28,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
           key={i}
           onClick={() => onPageChange(i + 1)}
           className={
-            currentPage === i + 1
-              ? styles.activePageButton
-              : styles.pageButton
+            currentPage === i + 1 ? styles.activePageButton : styles.pageButton
           }
         >
           {i + 1}

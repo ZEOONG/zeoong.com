@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background-image: url('/background-main.png');
+    background-image: url('https://imagedelivery.net/djfWIfaU9Mg_fliCGQwJbw/a7df2d90-8ad0-4f87-68f1-7f14e61ced00/public');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,7 +11,7 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
 
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(14px);
 
     scrollbar-width: none;

@@ -1,10 +1,11 @@
-'use client'
+"use client";
 
-import styles from "@/styles/card.module.scss"
-import Image from 'next/image';
+import Image from "next/image";
 import Link from "next/link";
-import { MdDownload } from 'react-icons/md';
-import { useState } from 'react';
+import { useState } from "react";
+import { MdDownload } from "react-icons/md";
+
+import styles from "@/styles/card.module.scss";
 
 interface LinkType {
   href: string;
@@ -40,7 +41,7 @@ export default function Card({ data }: { data: CardData }) {
 
   const handleDownloadClick = () => {
     setIsClicked(true);
-    console.log('다운로드됨');
+    console.log("다운로드됨");
 
     setTimeout(() => {
       setIsClicked(false);
@@ -70,8 +71,17 @@ export default function Card({ data }: { data: CardData }) {
               <p>{data.content.description}</p>
               <div className={styles.ContentInfo}>
                 {data.links.map((link, index) => (
-                  <Link href={link.href} className={styles.IconButton} key={index}>
-                    <Image src={link.icon} alt={link.alt} width={24} height={24} />
+                  <Link
+                    href={link.href}
+                    className={styles.IconButton}
+                    key={index}
+                  >
+                    <Image
+                      src={link.icon}
+                      alt={link.alt}
+                      width={24}
+                      height={24}
+                    />
                   </Link>
                 ))}
               </div>
@@ -79,7 +89,7 @@ export default function Card({ data }: { data: CardData }) {
             <div className={styles.DownLoadLayout}>
               <button
                 onClick={handleDownloadClick}
-                className={`${styles.DownLoadLayoutButton} ${isClicked ? styles.clicked : ''}`}
+                className={`${styles.DownLoadLayoutButton} ${isClicked ? styles.clicked : ""}`}
               >
                 <MdDownload className={styles.downloadIcon} />
               </button>
@@ -92,9 +102,14 @@ export default function Card({ data }: { data: CardData }) {
           <div className={styles.infoItem}>
             <span className={styles.label}>마인크래프트 버전</span>
             <div className={styles.tags}>
-              <select className={styles.tagSelect} defaultValue={data.info.defaultVersion}>
+              <select
+                className={styles.tagSelect}
+                defaultValue={data.info.defaultVersion}
+              >
                 {data.info.versionOptions.map((version) => (
-                  <option value={version} key={version}>{version}</option>
+                  <option value={version} key={version}>
+                    {version}
+                  </option>
                 ))}
               </select>
             </div>
