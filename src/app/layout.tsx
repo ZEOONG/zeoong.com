@@ -8,7 +8,7 @@ export const runtime = "edge";
 export const metadata: Metadata = {
   title: "제옹 - ZEONG",
   description:
-    "마인크래프트 커맨드 & 리소스팩을 배포하는 제옹의 공식 페이지입니다.",
+    "제옹 · zeong · ZEONG 마인크래프트 맵 & 커맨드 & 리소스팩을 배포하는 제옹의 공식 페이지에옹",
   icons: {
     icon: "/zeongFace.svg",
   },
