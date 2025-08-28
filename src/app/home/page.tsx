@@ -12,12 +12,46 @@ import cardDataList from "@/data/cardData.json";
 
 import styles from "@/styles/home.module.scss";
 
+interface LinkType {
+  href: string;
+  icon: string;
+  alt: string;
+}
+
+interface InfoType {
+  versionOptions: string[];
+  defaultVersion: string;
+  genre: string;
+  type: string;
+  downloads: number;
+  date: string;
+}
+
+interface CardData {
+  id: string;
+  titleImage: string;
+  overlay: {
+    title: string;
+    subtitle: string;
+  };
+  content: {
+    title: string;
+    description: string;
+    detailedDescription?: string;
+  };
+  links: LinkType[];
+  info: InfoType;
+  downloadUrl?: string;
+}
+
 export default function Home() {
   const cardsPerPage = 4;
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOrder, setSortOrder] = useState("latest");
 
-  const sortedCards = [...cardDataList].sort((a, b) => {
+  const typedCardDataList = cardDataList as CardData[];
+
+  const sortedCards = [...typedCardDataList].sort((a, b) => {
     if (sortOrder === "latest") {
       return new Date(b.info.date).getTime() - new Date(a.info.date).getTime();
     } else if (sortOrder === "oldest") {
@@ -71,7 +105,7 @@ export default function Home() {
 
         <div className={styles.CardLayout}>
           {currentCards.map((card, index) => (
-            <Card key={index} data={card} />
+            <Card key={card.id || index} data={card} />
           ))}
         </div>
         <Pagination

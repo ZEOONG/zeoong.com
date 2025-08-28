@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { MdDownload } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 import styles from "@/styles/card.module.scss";
 
@@ -23,6 +21,7 @@ interface InfoType {
 }
 
 interface CardData {
+  id: string;
   titleImage: string;
   overlay: {
     title: string;
@@ -34,23 +33,23 @@ interface CardData {
   };
   links: LinkType[];
   info: InfoType;
+  downloadUrl?: string;
 }
 
 export default function Card({ data }: { data: CardData }) {
-  const [isClicked, setIsClicked] = useState(false);
+  const router = useRouter();
 
-  const handleDownloadClick = () => {
-    setIsClicked(true);
-    console.log("다운로드됨");
-
-    setTimeout(() => {
-      setIsClicked(false);
-    }, 600);
+  const handleCardClick = () => {
+    router.push(`/detail/${data.id}`);
   };
 
   return (
     <div className={styles.CardContainer}>
-      <div className={styles.CardContainerInLine}>
+      <div
+        className={styles.CardContainerInLine}
+        onClick={handleCardClick}
+        style={{ cursor: "pointer" }}
+      >
         <div className={styles.ImageContainer}>
           <Image
             src={data.titleImage}
@@ -69,30 +68,6 @@ export default function Card({ data }: { data: CardData }) {
             <div className={styles.WritingLayout}>
               <h1>{data.content.title}</h1>
               <p>{data.content.description}</p>
-              <div className={styles.ContentInfo}>
-                {data.links.map((link, index) => (
-                  <Link
-                    href={link.href}
-                    className={styles.IconButton}
-                    key={index}
-                  >
-                    <Image
-                      src={link.icon}
-                      alt={link.alt}
-                      width={24}
-                      height={24}
-                    />
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <div className={styles.DownLoadLayout}>
-              <button
-                onClick={handleDownloadClick}
-                className={`${styles.DownLoadLayoutButton} ${isClicked ? styles.clicked : ""}`}
-              >
-                <MdDownload className={styles.downloadIcon} />
-              </button>
             </div>
           </div>
         </div>
@@ -105,6 +80,7 @@ export default function Card({ data }: { data: CardData }) {
               <select
                 className={styles.tagSelect}
                 defaultValue={data.info.defaultVersion}
+                onClick={(e) => e.stopPropagation()}
               >
                 {data.info.versionOptions.map((version) => (
                   <option value={version} key={version}>

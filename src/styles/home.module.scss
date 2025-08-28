@@ -29,7 +29,6 @@ $primary-text-color : #ffffff;
     width: 1030px;
 }
 
-
 .sortSelect {
     width: 160px;
 }
@@ -56,7 +55,6 @@ $primary-text-color : #ffffff;
     }
 }
 
-
 .headerlayout {
     display: flex;
     flex-direction: column;
@@ -82,6 +80,7 @@ $primary-text-color : #ffffff;
         }
     }
 }
+
 .CardLayout {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -141,6 +140,120 @@ $primary-text-color : #ffffff;
             background-color: #1a1a1a;
             color: #777;
             opacity: 0.6;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .mainlayout {
+        width: 90%;
+        max-width: 1030px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainlayout {
+        width: 100%;
+        padding: 0 16px;
+    }
+    
+    .headerlayout {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        
+        .profile {
+            padding: 16px 0;
+            
+            h1 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+    }
+    
+    .sortSelect {
+        width: 140px;
+    }
+    
+    .sortSelectBtn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .CardLayout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 16px;
+        padding: 0 20px;
+    }
+    
+    .pagination {
+        margin-top: 20px;
+        gap: 4px;
+        flex-wrap: wrap;
+        
+        .pageButton,
+        .activePageButton {
+            padding: 6px 10px;
+            font-size: 13px;
+            min-width: 32px;
+        }
+        
+        .arrowButton {
+            padding: 6px 8px;
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .mainlayout {
+        padding: 0 12px;
+    }
+    
+    .headerlayout {
+        margin-top: 20px;
+        margin-bottom: 16px;
+        
+        .profile {
+            padding: 12px 0;
+            
+            h1 {
+                font-size: 1.3rem;
+            }
+        }
+    }
+    
+    .sortSelect {
+        width: 120px;
+    }
+    
+    .sortSelectBtn {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+    
+    .CardLayout {
+        gap: 12px;
+        margin-top: 12px;
+        padding: 0 16px;
+    }
+    
+    .pagination {
+        margin-top: 16px;
+        gap: 2px;
+        
+        .pageButton,
+        .activePageButton {
+            padding: 5px 8px;
+            font-size: 12px;
+            min-width: 28px;
+        }
+        
+        .arrowButton {
+            padding: 5px 6px;
+            font-size: 12px;
         }
     }
 }
