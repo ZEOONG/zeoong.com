@@ -75,7 +75,7 @@ export default function Card({ data }: { data: CardData }) {
       <div className={styles.OutInfoContainer}>
         <div className={styles.OutInfoContainerTop}>
           <div className={styles.infoItem}>
-            <span className={styles.label}>마인크래프트 버전</span>
+            <span className={styles.label}>버전</span>
             <div className={styles.tags}>
               <select
                 className={styles.tagSelect}
@@ -97,7 +97,7 @@ export default function Card({ data }: { data: CardData }) {
             </div>
           </div>
           <div className={styles.infoItem}>
-            <span className={styles.label}>자료종류</span>
+            <span className={styles.label}>자료 · 형식</span>
             <div className={styles.tags}>
               <span className={styles.tag}>{data.info.type}</span>
             </div>
