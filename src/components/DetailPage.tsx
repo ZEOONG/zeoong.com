@@ -114,7 +114,7 @@ export default function DetailPage({ id }: DetailPageProps) {
           <h2 className={styles.sectionTitle}>상세 정보</h2>
           <div className={styles.infoGrid}>
             <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>마인크래프트 버전</span>
+              <span className={styles.infoLabel}>버전</span>
               <select
                 className={styles.versionSelect}
                 defaultValue={cardData.info.defaultVersion}
@@ -133,7 +133,7 @@ export default function DetailPage({ id }: DetailPageProps) {
             </div>
 
             <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>자료종류</span>
+              <span className={styles.infoLabel}>자료 · 형식</span>
               <span className={styles.tag}>{cardData.info.type}</span>
             </div>
 
