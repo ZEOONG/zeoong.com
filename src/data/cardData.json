@@ -13,8 +13,8 @@
         { "href": "https://www.youtube.com/watch?v=XhkNW_Zs5UM&t=7s", "icon": "/youtube-svgrepo-com.svg", "alt": "youtube" }
       ],
       "info": {
-        "versionOptions": ["1.21.3"],
-        "defaultVersion": "1.21.3",
+        "versionOptions": ["1.21.1"],
+        "defaultVersion": "1.21.1",
         "genre": "어드벤처",
         "type": "모드, 맵, 리소스팩",
         "downloads": 0,
@@ -35,8 +35,8 @@
           { "href": "https://www.youtube.com/watch?v=T-TEyPCI6RM&t=306s", "icon": "/youtube-svgrepo-com.svg", "alt": "youtube" }
         ],
         "info": {
-          "versionOptions": ["1.21.3"],
-          "defaultVersion": "1.21.3",
+          "versionOptions": ["1.21.4"],
+          "defaultVersion": "1.21.4",
           "genre": "어드벤처",
           "type": "모드, 맵, 리소스팩",
           "downloads": 0,
@@ -57,8 +57,8 @@
           { "href": "https://www.youtube.com/watch?v=bjmnMyGqNPs", "icon": "/youtube-svgrepo-com.svg", "alt": "youtube" }
         ],
         "info": {
-          "versionOptions": ["1.21.3"],
-          "defaultVersion": "1.21.3",
+          "versionOptions": ["1.21.4"],
+          "defaultVersion": "1.21.4",
           "genre": "어드벤처",
           "type": "모드, 맵, 리소스팩",
           "downloads": 0,
