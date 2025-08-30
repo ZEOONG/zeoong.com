@@ -13,7 +13,6 @@ import styles from "@/styles/detail.module.scss";
 interface DetailPageProps {
   id: string;
 }
-
 function convertToEmbedUrl(url: string): string {
   const videoIdMatch = url.match(
     /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/,
