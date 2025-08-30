@@ -8,12 +8,10 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <div className={styles.footerLinks}>
-          <Link href="/terms">이용약관</Link>
           <Link href="/privacy">개인정보 처리방침</Link>
           <Link href="/contact">문의하기</Link>
-          <Link href="/contact">고객 센터</Link>
-          <Link href="/contact">모든 서비스</Link>
-          <Link href="/contact">소개</Link>
+          <Link href="/services">모든 서비스</Link>
+          <Link href="/about">소개</Link>
         </div>
         <div className={styles.Creator}>
           <Image
