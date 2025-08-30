@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { MdArrowBack, MdDownload } from "react-icons/md";
@@ -13,6 +12,16 @@ import styles from "@/styles/detail.module.scss";
 
 interface DetailPageProps {
   id: string;
+}
+
+function convertToEmbedUrl(url: string): string {
+  const videoIdMatch = url.match(
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/,
+  );
+  if (videoIdMatch) {
+    return `https://www.youtube.com/embed/${videoIdMatch[1]}`;
+  }
+  return url;
 }
 
 export default function DetailPage({ id }: DetailPageProps) {
@@ -68,9 +77,6 @@ export default function DetailPage({ id }: DetailPageProps) {
             <h1 className={styles.heroTitle}>{cardData.overlay.title}</h1>
             <p className={styles.heroSubtitle}>{cardData.overlay.subtitle}</p>
           </div>
-        </div>
-
-        <div className={styles.actionSection}>
           <button
             onClick={handleDownloadClick}
             className={`${styles.downloadButton} ${isClicked ? styles.clicked : ""}`}
@@ -78,29 +84,29 @@ export default function DetailPage({ id }: DetailPageProps) {
             <MdDownload className={styles.downloadIcon} />
             <span className={styles.downloadText}>다운로드</span>
           </button>
-
-          {cardData.links.map(
-            (link, index) =>
-              link.alt === "youtube" && (
-                <Link
-                  key={index}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.youtubeButton}
-                >
-                  <Image
-                    src={link.icon}
-                    alt={link.alt}
-                    width={20}
-                    height={20}
-                    className={styles.youtubeIcon}
-                  />
-                  <span className={styles.youtubeText}>유튜브 보기</span>
-                </Link>
-              ),
-          )}
         </div>
+
+        {cardData.links.some((link) => link.alt === "youtube") && (
+          <div className={styles.contentSection}>
+            <div className={styles.videoContainer}>
+              {cardData.links
+                .filter((link) => link.alt === "youtube")
+                .map((link, index) => (
+                  <div key={index} className={styles.videoWrapper}>
+                    <iframe
+                      src={convertToEmbedUrl(link.href)}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                      className={styles.youtubeIframe}
+                    />
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
 
         <div className={styles.contentSection}>
           <h2 className={styles.sectionTitle}>게임팩 소개</h2>
@@ -161,7 +167,7 @@ export default function DetailPage({ id }: DetailPageProps) {
             <br />
             3. 다운로드한 파일을 마인크래프트 saves 폴더에 압축 해제합니다.
             <br />
-            4. 마인크래프트에서 싱글플레이 `{">"}` 월드 선택 `{">"}` 플레이!
+            4. 마인크래프트에서 싱글플레이 {">"} 월드 선택 {">"} 플레이!
           </p>
         </div>
 
