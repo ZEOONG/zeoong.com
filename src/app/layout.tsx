@@ -6,7 +6,7 @@ import "./globals.scss";
 export const runtime = "edge";
 
 export const metadata: Metadata = {
-  title: "제옹 - ZEONG",
+  title: "제옹",
   description:
     "제옹 - zeong - ZEONG 의 인크래프트 맵 & 커맨드 & 리소스팩을 배포하는 제옹의 공식 페이지에옹",
   icons: {
