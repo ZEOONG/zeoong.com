@@ -103,7 +103,7 @@ export default function Card({ data }: { data: CardData }) {
             </div>
           </div>
         </div>
-        <div className={styles.OutInfoContainerBottom}>
+        {/* <div className={styles.OutInfoContainerBottom}>
           <div className={styles.infoItem}>
             <span className={styles.label}>다운로드수</span>
             <span className={styles.value}>{data.info.downloads}</span>
@@ -111,7 +111,7 @@ export default function Card({ data }: { data: CardData }) {
           <div className={styles.infoItem}>
             <span className={styles.date}>{data.info.date}</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
