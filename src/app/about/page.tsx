@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import {
-  MdArrowBack,
-} from "react-icons/md";
+import { MdArrowBack } from "react-icons/md";
 
 import Footer from "@/components/footer";
 
@@ -16,6 +14,7 @@ export default function AboutPage() {
   const handleBackClick = () => {
     router.back();
   };
+
   return (
     <div className={styles.container}>
       <button onClick={handleBackClick} className={styles.backButton}>
@@ -54,8 +53,6 @@ export default function AboutPage() {
           </p>
         </div>
 
-
-
         <div className={styles.section}>
           <h2>협업 및 문의</h2>
           <p>
@@ -82,6 +79,7 @@ export default function AboutPage() {
               <h3>제옹</h3>
               <p>크리에이터</p>
             </div>
+
             <div className={styles.teamMember}>
               <Image
                 src="/kongduckFace.svg"
